@@ -1,4 +1,4 @@
-const density = 100;
+const density = 110;
 const angleMult = 0.005;
 var points = [];
 var timer = 0;
@@ -28,7 +28,7 @@ function setup() {
 
 
 function draw() {
-  background(0, ceil(600/frameRate()));
+  background(0, 10);
 
   for (let i = 0; i < points.length; i++) {
 
@@ -38,13 +38,8 @@ function draw() {
     //let circle = map(sq(points[i].x - width/2) + sq(points[i].y - height/2), 0, sq(height/2.2), 255, 0);
     stroke(r, g, b);
 
-    let tempX = points[i].x;
-    let tempY = points[i].y;
-
     let angle = map(noise(points[i].x * angleMult, points[i].y* angleMult), 0, 1, 0, 360);
-    let vec = createVector(cos(angle), sin(angle));
-    vec.mult(round(60/frameRate()));
-    points[i].add(vec);
+    points[i].add(createVector(cos(angle), sin(angle)));
 
     point(points[i].x, points[i].y);
 
