@@ -43,7 +43,7 @@ function draw() {
 
     let angle = map(noise(points[i].x * angleMult, points[i].y* angleMult), 0, 1, 0, 360);
     let vec = createVector(cos(angle), sin(angle));
-    vec.mult(ceil(60/frameRate()));
+    vec.mult(round(60/frameRate()));
     points[i].add(vec);
 
     line(tempX, tempY, points[i].x, points[i].y);
