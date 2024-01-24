@@ -46,7 +46,7 @@ function draw() {
     vec.mult(round(60/frameRate()));
     points[i].add(vec);
 
-    line(tempX, tempY, points[i].x, points[i].y);
+    point(points[i].x, points[i].y);
 
     let xPos = points[i].x;
     let yPos = points[i].y;
